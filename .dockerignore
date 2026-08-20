@@ -1,0 +1,69 @@
+# Include any files or directories that you don't want to be copied to your
+# container here (e.g., local build artifacts, temporary files, etc.).
+#
+# For more help, visit the .dockerignore file reference guide at
+# https://docs.docker.com/go/build-context-dockerignore/
+
+# Environment files
+**/.env
+**/.env.*
+!.env.example
+
+# Git
+**/.git
+**/.gitignore
+
+# IDE files
+**/.vscode
+**/.idea
+**/.vs
+**/.project
+**/.classpath
+**/.settings
+**/*.*proj.user
+
+# Docker files (not needed inside build context)
+**/Dockerfile*
+**/docker-compose*
+**/compose.y*ml
+**/.dockerignore
+
+# Node
+**/node_modules
+**/npm-debug.log
+**/.npm
+
+# Frontend build cache
+**/.next
+**/.cache
+
+# Composer
+**/vendor
+
+# Laravel generated files
+bootstrap/cache/*.php
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+storage/logs/*
+
+# Local databases
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+**/*.dbmdl
+**/*.jfm
+
+# Build artifacts
+**/obj
+**/charts
+**/secrets.dev.yaml
+**/values.dev.yaml
+
+# Documentation (optional)
+LICENSE
+README.md
+
+# Keep Composer files available for Docker builds
+!composer.json
+!composer.lock
