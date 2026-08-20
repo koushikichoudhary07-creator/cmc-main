@@ -98,8 +98,8 @@ export default function Show({ auth, product, relatedProducts }: ProductShowProp
                         <nav className="text-sm text-gray-500 mb-4 flex gap-2 capitalize">
                             <Link href="/" className="hover:text-black">Home</Link>
                             <span>/</span>
-                            <Link href={`/${product.category.toLowerCase()}/${product.subcategory.toLowerCase()}`} className="hover:text-black">
-                                {product.subcategory}
+                            <Link href={`/${(product.category || '').toLowerCase()}/${(product.subcategory || '').toLowerCase()}`} className="hover:text-black">
+                                {product.subcategory || 'General'}
                             </Link>
                             <span>/</span>
                             <span className="text-gray-900 font-medium">{product.name}</span>
