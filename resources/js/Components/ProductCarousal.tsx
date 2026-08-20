@@ -1,6 +1,6 @@
 import PrimaryButton from '@/Components/PrimaryButton';
 import { Carousel } from 'flowbite-react';
-import { router } from '@inertiajs/react';
+import { router, Link } from '@inertiajs/react';
 import { useState } from 'react';
 
 export interface Product {
@@ -87,13 +87,14 @@ export default function ProductCarousal({ products, userBagQuantities = {} }: Ca
                                         <div className="h-full w-full">
                                             <Carousel slide={false}>
                                                 {product.images.map((imgUrl, index) => (
-                                                    <img 
-                                                        key={index}
-                                                        src={imgUrl} 
-                                                        alt={`${product.name} - Angle ${index + 1}`} 
-                                                        className="h-full w-full object-cover" 
-                                                        loading="lazy"
-                                                    />
+                                                    <Link key={index} href={route('product.show', product.id)} className="h-full w-full block">
+                                                        <img 
+                                                            src={imgUrl} 
+                                                            alt={`${product.name} - Angle ${index + 1}`} 
+                                                            className="h-full w-full object-cover" 
+                                                            loading="lazy"
+                                                        />
+                                                    </Link>
                                                 ))}
                                             </Carousel>
                                         </div>
@@ -115,12 +116,14 @@ export default function ProductCarousal({ products, userBagQuantities = {} }: Ca
                                         </button>
                                     </div>
                                 ) : (
-                                    <div className="w-full aspect-[3/4] bg-gray-200 flex items-center justify-center rounded-md mb-2 md:mb-4 text-gray-400">
+                                    <Link href={route('product.show', product.id)} className="w-full aspect-[3/4] bg-gray-200 flex items-center justify-center rounded-md mb-2 md:mb-4 text-gray-400 block">
                                         No Image Available
-                                    </div>
+                                    </Link>
                                 )}
 
-                                <h3 className="font-semibold text-xs md:text-sm line-clamp-2 leading-tight md:leading-normal">{product.name}</h3>
+                                <Link href={route('product.show', product.id)}>
+                                    <h3 className="font-semibold text-xs md:text-sm line-clamp-2 leading-tight md:leading-normal hover:text-red-500 transition-colors">{product.name}</h3>
+                                </Link>
                             </div>
                             
                             {/* Product pricing */}

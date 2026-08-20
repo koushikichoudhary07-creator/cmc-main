@@ -6,6 +6,7 @@ use App\Http\Controllers\BagController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\GeminiController; 
+use App\Http\Controllers\ProductController;
 use App\Models\Product; 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -30,6 +31,9 @@ Route::get('/', function () {
     ]);
 })->name('home');
 Route::post('/ask-gemini', [GeminiController::class, 'ask']);
+
+// PRODUCT PAGE
+Route::get('/product/{product}', [ProductController::class, 'show'])->name('product.show');
 
 // TRADITIONAL
 Route::prefix('traditional')->group(function () {

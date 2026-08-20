@@ -16,4 +16,22 @@ class ProductController extends Controller
             'products' => $products
         ]);
     }
+
+    public function show(Product $product)
+    {
+        // Fetch related products (e.g., from the same subcategory or category)
+        $relatedProducts = Product::where('id', '!=', $product->id)
+            ->where(function($query) use ($product) {
+                $query->where('subcategory', $product->subcategory)
+                      ->orWhere('category', $product->category);
+            })
+            ->inRandomOrder()
+            ->take(4)
+            ->get();
+
+        return Inertia::render('Product/Show', [
+            'product' => $product,
+            'relatedProducts' => $relatedProducts
+        ]);
+    }
 }
