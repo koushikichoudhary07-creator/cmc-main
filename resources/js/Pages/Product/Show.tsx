@@ -183,10 +183,11 @@ export default function Show({ auth, product, relatedProducts }: ProductShowProp
 
                 {/* Related Products */}
                 {relatedProducts && relatedProducts.length > 0 && (
-                    <div className="mt-20 border-t border-gray-200 pt-10">
+                    <div className="mt-20 border-t border-gray-200 pt-10 w-screen relative left-1/2 right-1/2 -translate-x-1/2 px-4 sm:px-8 md:px-16">
                         <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">You Might Also Like</h2>
                         <ProductCarousal products={relatedProducts} />
                     </div>
+
                 )}
             </main>
             
