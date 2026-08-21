@@ -56,7 +56,7 @@ export default function Storefront({ auth, saleProducts, newProducts }: Storefro
                     </Carousel> 
                 </div>
 
-                <div className="max-w-10xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="max-w-10xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 md:mt-12">
                     <h2 className="text-[20px] md:text-[36px] font-bold text-gray-900 mb-[16px] md:mb-[28px] text-center">Items on Sale</h2>
                     <ProductCarousal products={saleProducts} />
                     

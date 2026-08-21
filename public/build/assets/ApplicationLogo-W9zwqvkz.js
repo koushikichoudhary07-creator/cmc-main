@@ -1,0 +1,1 @@
+import{t as e}from"./app-kQsFrGuY.js";var t=e();function n(e){return(0,t.jsx)(`img`,{...e,src:`/favicon.png`,alt:`My Custom Logo`})}export{n as t};
