@@ -118,9 +118,8 @@ export default function Show({ auth, product, relatedProducts }: ProductShowProp
                             )}
                         </div>
 
-                        <div className="prose prose-sm text-gray-600 mb-8">
-                            <p>{product.description || "A lovely addition to your wardrobe."}</p>
-                        </div>
+                        {/* Spacer where description used to be, removed to avoid duplication with Product Details below */}
+                        <div className="mb-8"></div>
 
                         {/* Size Selection (hide for accessories mostly, or keep it generic) */}
                         {product.category !== 'accessories' && (
@@ -170,16 +169,13 @@ export default function Show({ auth, product, relatedProducts }: ProductShowProp
                             </button>
                         </div>
 
-                        {/* Accordion style details (Static for now) */}
+                        {/* Accordion style details */}
                         <div className="border-t border-gray-200 pt-6 space-y-4">
                             <div>
                                 <h4 className="font-bold text-gray-900 mb-2">Product Details</h4>
-                                <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
-                                    <li>Premium quality material</li>
-                                    <li>Regular fit</li>
-                                    <li>Machine washable</li>
-                                    <li>Imported</li>
-                                </ul>
+                                <div className="text-sm text-gray-600 whitespace-pre-wrap">
+                                    {product.description || "No specific details provided for this product."}
+                                </div>
                             </div>
                         </div>
                     </div>
