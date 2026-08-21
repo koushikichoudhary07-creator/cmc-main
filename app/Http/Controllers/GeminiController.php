@@ -21,7 +21,7 @@ class GeminiController extends Controller
         try {
             // Compact catalog cached for 1 hour — only first image, short keys
             // Guard: never cache an empty result (e.g. DB not ready yet)
-            $products = Cache::remember('gemini_catalog', now()->addHours(1), function () {
+            $products = Cache::remember('gemini_catalog_v2', now()->addHours(1), function () {
                 $rows = Product::select('name', 'price', 'sales_price', 'images', 'category', 'subcategory', 'description', 'search_tags', 'vibe_keywords')
                     ->get();
 
