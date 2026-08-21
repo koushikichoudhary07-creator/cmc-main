@@ -26,7 +26,7 @@ class ProductController extends Controller
                       ->orWhere('category', $product->category);
             })
             ->inRandomOrder()
-            ->take(4)
+            ->take(5)
             ->get();
 
         return Inertia::render('Product/Show', [
