@@ -70,7 +70,7 @@ export default function ProductCarousal({ products, userBagQuantities = {} }: Ca
     };
     return (
         // Product Card
-        <div className="flex flex-wrap justify-center gap-3 my-4 mx-0 pb-4 md:gap-6 md:m-8">
+        <div className="flex flex-nowrap overflow-x-auto gap-3 my-4 mx-0 pb-4 md:gap-6 md:m-8 snap-x snap-mandatory scroll-smooth" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
             {products && products.length > 0 ? (
                 products.map((product) => {
                     const currentQty = userBagQuantities[product.id] || 0;
