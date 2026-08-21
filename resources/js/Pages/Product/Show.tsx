@@ -181,14 +181,7 @@ export default function Show({ auth, product, relatedProducts }: ProductShowProp
                                     <li>Imported</li>
                                 </ul>
                             </div>
-                            <div>
-                                <h4 className="font-bold text-gray-900 mb-2">Shipping & Returns</h4>
-                                <p className="text-sm text-gray-600">
-                                    Free standard shipping on orders over ₹2000. Free returns within 30 days.
-                                </p>
-                            </div>
                         </div>
-
                     </div>
                 </div>
 
